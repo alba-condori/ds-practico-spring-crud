@@ -11,7 +11,7 @@ class InstrumentoServicio {
         return instrumento
     }
 
-    fun listarTodos(instrumento: Instrumento): List<Instrumento> {
+    fun listarTodos(): List<Instrumento> {
      return instrumentos.toList()
     }
 
@@ -19,9 +19,16 @@ class InstrumentoServicio {
         return instrumentos.find { it.id == id }
     }
 
-    fun actualizar(id: Int, instrumento: Instrumento): Instrumento?{
-        //Terminar
-        return Instrumento
+    fun actualizar(id: Int, instrumento: Instrumento): Instrumento? {
+
+        val indice = instrumentos.indexOfFirst {
+            it.id == id
+        }
+        if (indice == -1)
+            return null
+        instrumentos[indice] = instrumento
+
+        return instrumento
     }
 
     fun eliminar(id: Int): Boolean {
