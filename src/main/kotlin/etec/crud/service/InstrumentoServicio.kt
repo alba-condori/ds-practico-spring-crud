@@ -1,7 +1,9 @@
 package etec.crud.service
 
 import etec.crud.model.Instrumento
+import org.springframework.stereotype.Service
 
+@Service
 class InstrumentoServicio {
 
     val instrumentos = mutableListOf<Instrumento>()
